@@ -1,7 +1,7 @@
 QuickMail
 =========
 
-Send quick mail.
+Send quick mail.  
 This class is based on the Zend_Mail class (version 1.11).
 
 How to use it
