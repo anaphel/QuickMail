@@ -11,10 +11,10 @@ If you are not in a Zend Framework project, you have to include 2 class which yo
 * /usr/share/php/Zend/Mail.php
 * /usr/share/php/Zend/Mail/Transport/Smtp.php
 
-Here is a full example
+Here is a full example with Cc, Bcc, attachments and headers
 
 ```php
-$content = '<p>Hi, this is me : <img src="cid:1" /></p>';
+$content = '<p>Hi, this is me : <img src="cid:myphoto.jpg" alt="My photo" /></p>';
 $subject = 'My subject';
 $recipients = array(
     'friend@domain.com'
@@ -22,7 +22,8 @@ $recipients = array(
 $from = 'mymail@domain.com';
 $fromName = 'Louis';
 $recipientsCc = array(
-    'copy.friend@domain.com'
+    'copy.friend@domain.com',
+    'anothercopy.friend@domain.com'
 );
 $recipientsBcc = array(
     'hidden.friend@domain.com'

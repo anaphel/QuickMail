@@ -77,7 +77,6 @@ class QuickMail extends Zend_Mail
         
         // add the attachments
         if (!empty($attachments)) {
-            $cid = 1;
             foreach ($attachments as $attachment) {
                 $newAttachment = $this->createAttachment(
                     file_get_contents($attachment),
@@ -87,8 +86,7 @@ class QuickMail extends Zend_Mail
                     Zend_Mime::ENCODING_BASE64,
                     basename($attachment)
                 );
-                $newAttachment->id = $cid;
-                $cid++;
+                $newAttachment->id = basename($attachment);
             }
         }
 
