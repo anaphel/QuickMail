@@ -7,7 +7,7 @@ This class is based on the Zend_Mail class (version 1.11).
 How to use it
 -------------------------
 
-If you are not in a Zend Framework project, you have to include 2 class which you can found usually here :
+If you are not in a Zend Framework project, you have to include 2 class which you can found usually here:
 * /usr/share/php/Zend/Mail.php
 * /usr/share/php/Zend/Mail/Transport/Smtp.php
 
