@@ -107,10 +107,9 @@ class QuickMail extends Zend_Mail
     /**
      * Send the email and return the log
      * 
-     * @param Zend_Mail_Transport_Smtp $transport
      * @return string $log
      */
-    public function send($transport = null)
+    public function send()
     {
         parent::send($this->_transport);
         return $this->_transport->getConnection()->getLog();
