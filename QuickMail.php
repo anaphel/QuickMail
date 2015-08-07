@@ -46,9 +46,10 @@ class QuickMail extends Zend_Mail
      * @param string $fromName
      * @param array $attachments
      * @param array $headers
+     * @param string $contentText
      * @return void
      */
-    public function feed($content, $subject, array $recipients, $from, $fromName = null, $recipientsCc = array(), $recipientsBcc = array(), $attachments = null, $headers = array())
+    public function feed($content, $subject, array $recipients, $from, $fromName = null, array $recipientsCc = null, array $recipientsBcc = null, array $attachments = null, array $headers = null, $contentText = null)
     {
         // encode subject and from name if definied
         $subject = mb_encode_mimeheader($subject, $this->_charset, 'B');
@@ -97,6 +98,11 @@ class QuickMail extends Zend_Mail
             }
         }
 
+        // add plain text content
+        if (!empty($contentText)) {
+            $this->setBodyText($contentText);
+        }
+
         // set everything
         $this->setBodyHtml($content);
         $this->setFrom($from, $fromName);
@@ -107,9 +113,10 @@ class QuickMail extends Zend_Mail
     /**
      * Send the email and return the log
      * 
+     * @param Zend_Mail_Transport_Smtp $transport
      * @return string $log
      */
-    public function send()
+    public function send($transport = null)
     {
         parent::send($this->_transport);
         return $this->_transport->getConnection()->getLog();
