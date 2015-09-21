@@ -17,7 +17,7 @@ class QuickMail extends Zend_Mail
      * @param string $smtpServer
      * @param string $username
      * @param string $password
-     * @return void
+     * @return QuickMail
      */
     public function __construct($charset = 'UTF-8', $smtpServer = 'localhost', $username = null, $password = null)
     {
