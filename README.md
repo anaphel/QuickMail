@@ -10,6 +10,7 @@ How to use it
 If you are not in a Zend Framework project, you have to include 2 class which you can found usually here:
 * /usr/share/php/Zend/Mail.php
 * /usr/share/php/Zend/Mail/Transport/Smtp.php
+* /usr/share/php/Zend/Mime.php
 
 Here is a full example with Cc, Bcc, attachments and headers
 
